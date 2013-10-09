@@ -43,8 +43,7 @@ bash does not interpret the parentheses. I'm still thinking about that one.
 Exceptions are caught and returned as single line strings:
 
 	$ c '(+ - 1)'
-	#<ClassCastException java.lang.ClassCastException: clojure.core$_ cannot be
-cast to java.lang.Number>
+	#<ClassCastException java.lang.ClassCastException: clojure.core$_ cannot be cast to java.lang.Number>
 
 Results can be piped around like any normal bash command
 
