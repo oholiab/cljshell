@@ -17,12 +17,10 @@
     (binding [*in* (BufferedReader. (InputStreamReader. in))
              *out* (OutputStreamWriter. out)]
       (let [line (read-line)]
-        (if (re-matches #"^\(.+\)" line)
-          (try
-            (console line)
-            (println (load-string line))
-            (catch Exception e (println e)))
-          (println "Invalid syntax")))
+        (try
+          (console line)
+          (println (load-string line))
+          (catch Exception e (println e))))
       (.close *out*))))
 
 (defn -main

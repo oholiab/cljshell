@@ -34,18 +34,15 @@ and then in another shell
 
 Then you should be able to run any clojure function like:
 
-	$ c + 1 1
+	$ c '(+ 1 1)'
 	2
 
-Nested functions currently need quoting because of bash interpreting the
-parentheses (I'll be having a think about that one, answers on a postcard...)
-
-	$ c "+ 1 (+ 1 1)"
-	3
+All function calls currently have to be enclosed in quotes of some kind so that
+bash does not interpret the parentheses. I'm still thinking about that one.
 
 Exceptions are caught and returned as single line strings:
 
-	$ c + - 1
+	$ c '(+ - 1)'
 	#<ClassCastException java.lang.ClassCastException: clojure.core$_ cannot be
 cast to java.lang.Number>
 
