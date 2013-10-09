@@ -26,7 +26,7 @@ Either, in the project directory
 
 or
 
-  java -jar cljshell-0.1.0-standalone.jar
+	java -jar cljshell-0.1.0-standalone.jar
 
 and then in another shell
 
@@ -48,6 +48,8 @@ Exceptions are caught and returned as single line strings:
 	$ c + - 1
 	#<ClassCastException java.lang.ClassCastException: clojure.core$_ cannot be
 cast to java.lang.Number>
+
+Results can be piped around like any normal bash command
 
 ## Options
 
