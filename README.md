@@ -45,7 +45,25 @@ Exceptions are caught and returned as single line strings:
 	$ c '(+ - 1)'
 	#<ClassCastException java.lang.ClassCastException: clojure.core$_ cannot be cast to java.lang.Number>
 
-Results can be piped around like any normal bash command
+Results can be piped around like any normal bash command. For a slightly more
+usefully formatted output, there's also `cl` which will parse a list (although
+sadly not a nested one yet) into a newline separated list, so you can do:
+
+	$ cl '(range 3)'
+	0
+	1
+	2
+
+And thus
+
+	$ for i in $(cl '(range 3)'); do echo $i stuff; done
+	0 stuff
+	1 stuff
+	2 stuff
+
+Which is obviously entirely useless compared to bash's inbuilts, but once you've
+added some functions to your server it might be useful. Might being the
+operative word.
 
 ## Options
 
