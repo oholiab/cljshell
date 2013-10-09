@@ -18,10 +18,13 @@
              *out* (OutputStreamWriter. out)]
       (let [line (read-line)]
         (try
-          (console line)
-          (println (load-string line))
-          (catch Exception e (println e))))
-      (.close *out*))))
+          (console (str ">> " line))
+          (let [return-val (load-string line)]
+            (console return-val)
+            (println return-val))
+          (catch Exception e (do (console e)
+                                 (println e))))
+      (.close *out*)))))
 
 (defn -main
   "I don't do a whole lot ... yet."
