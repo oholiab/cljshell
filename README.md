@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cljshell
 
 A basic clojure server which listens on a port and evaluates any text that you
